@@ -9,18 +9,17 @@ type UserItemParams = {
 }
 
 export const usersRepository = appDataSource.getRepository(UserEntity).extend({
-  async createOne(): Promise<UserEntity> {
+  createOne(): UserEntity {
     const user = new UserEntity()
-    await this.create(user)
+    this.create(user)
     return user
   },
   async createAndSave(): Promise<UserEntity> {
-    const user = await this.createOne()
-    console.log('user :>> ', user);
-    const calendar = await calendarsRepository.createOne({ userId: user.id })
+    let user = this.createOne()
+    user = await this.save(user)
+    const calendar = await calendarsRepository.createAndSave({ userId: user.id })
     user.calendar = calendar
     await this.save(user)
-    await calendarsRepository.save(calendar)
     return user
   },
 

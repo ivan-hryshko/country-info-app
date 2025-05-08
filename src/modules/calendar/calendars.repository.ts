@@ -9,16 +9,10 @@ type CalendarItemParams = {
 }
 
 export const calendarsRepository = appDataSource.getRepository(CalendarEntity).extend({
-  async createOne(params: CalendarCreateParams): Promise<CalendarEntity> {
-    const calendar = new CalendarEntity()
-    calendar.user = { id: params.userId } as any
-    calendar.holidays = []
-    await this.create(calendar)
-    return calendar
-  },
   async createAndSave(params: CalendarCreateParams): Promise<CalendarEntity> {
     const calendar = new CalendarEntity()
     calendar.user = { id: params.userId } as any
+    calendar.holidays = []
     await this.save(calendar)
     return calendar
   },
