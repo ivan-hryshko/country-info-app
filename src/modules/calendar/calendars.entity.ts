@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { UserEntity } from '../users/users.entity';
 
 @Entity({ name: "calendars" })
@@ -10,5 +10,6 @@ export class CalendarEntity {
   holidays: string[];
 
   @ManyToOne(() => UserEntity, user => user.calendars, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'user_id' })
   user: UserEntity;
 }
