@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
 import { UserEntity } from '../users/users.entity';
 
 @Entity({ name: "calendars" })
@@ -9,7 +9,7 @@ export class CalendarEntity {
   @Column("text", { array: true })
   holidays: string[];
 
-  @ManyToOne(() => UserEntity, user => user.calendars, { onDelete: 'CASCADE' })
+  @OneToOne(() => UserEntity, user => user.calendar, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'user_id' })
   user: UserEntity;
 }

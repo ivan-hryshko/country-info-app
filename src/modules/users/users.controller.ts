@@ -8,8 +8,8 @@ export class UsersController {
       const user = await UsersService.create()
       res.status(201).json({ data: { user } })
     } catch (error) {
-      Logger.error('Failed to fetch countries:', error)
-      res.status(500).json({ message: 'Failed to fetch countries', error })
+      Logger.error('Failed to create user:', error)
+      res.status(500).json({ message: 'Failed to craetea user', error })
     }
   }
 }
