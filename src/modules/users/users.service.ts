@@ -1,5 +1,8 @@
+import { usersRepository } from "./users.repository"
+
 export class UsersService {
   static async create(): Promise<{}> {
-    return {}
+    const user = await usersRepository.createAndSave()
+    return user
   }
 }
