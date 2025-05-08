@@ -1,5 +1,5 @@
 import express from 'express'
-// import routes  from './routes/index'
+import routes  from './routes/index'
 
 // import postgresSource from './config/app-data-source'
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-// app.use('/api/v1/', routes)
+app.use('/api/v1/', routes)
 
 
 export default app
