@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { usersRepository } from '../users/users.repository'
 import appDataSource from '../../config/app-data-source'
 import { UserEntity } from '../users/users.entity'
 import { CalendarEntity } from './calendars.entity'
