@@ -7,8 +7,8 @@ export class CountriesController {
       const countries = await CountriesService.list()
       res.json(countries)
     } catch (error) {
-      // Logger.error('Error getting movie:', error)
-      res.status(500).json({ message: 'Error getting movie', error })
+      // Logger.error('Failed to fetch countries:', error)
+      res.status(500).json({ message: 'Failed to fetch countries', error })
     }
   }
 }
