@@ -23,8 +23,7 @@ A simple Node.js + Express + TypeScript application that exposes an endpoint to 
 ```bash
 git clone https://github.com/your-username/country-info-app.git
 cd country-info-app
-npm install
-npm run serve
+docker compose up
 ```
 
 ## Scripts
@@ -38,7 +37,7 @@ npm run serve
 
 ## API
 
-### `GET api/v1/countries`
+### `GET api/v1/countries/list`
 
 Returns a list of countries from the Nager.Date API.
 
@@ -55,6 +54,17 @@ Returns a list of countries from the Nager.Date API.
   }
 ]
 ```
+### `GET api/v1/countries/item/:countryCode`
+
+Returns information about the country.
+
+### `POST api/v1/users`
+
+Create new user with enpty calendar
+
+### `POST api/v1/users/:userId/calendar/holidays`
+
+Add new holidays to calendar
 
 ## Testing
 
