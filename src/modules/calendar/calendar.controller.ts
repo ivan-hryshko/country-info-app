@@ -3,9 +3,9 @@ import { Logger } from '../../utils/logger'
 import { CalendarService } from './calendar.service'
 
 export class CalendarController {
-  static async addHolidays(req: Request, res: Response): Promise<void>{
+  static async addHolidays(req: Request, res: Response): Promise<void> {
     try {
-      const holidays = await CalendarService.addHolidays({...req.params, ...req.body})
+      const holidays = await CalendarService.addHolidays({ ...req.params, ...req.body })
       res.status(201)
       res.json({ data: { holidays } })
     } catch (error) {

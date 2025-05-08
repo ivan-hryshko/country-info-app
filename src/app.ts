@@ -1,8 +1,7 @@
 import express from 'express'
-import routes  from './routes/index'
+import routes from './routes/index'
 
 import postgresSource from './config/app-data-source'
-
 
 const app = express()
 app.use(express.json())
@@ -10,10 +9,10 @@ app.use(express.json())
 postgresSource
   .initialize()
   .then(() => {
-      console.log("Data Source has been initialized!")
+    console.log('Data Source has been initialized!')
   })
   .catch((err) => {
-      console.error("Error during Data Source initialization:", err)
+    console.error('Error during Data Source initialization:', err)
   })
 
 app.get('/', (req, res) => {
@@ -21,6 +20,5 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/', routes)
-
 
 export default app

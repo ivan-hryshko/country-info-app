@@ -2,8 +2,7 @@ import appDataSource from '../../config/app-data-source'
 import { calendarsRepository } from '../calendar/calendars.repository'
 import { UserEntity } from './users.entity'
 
-type UserCreateParams = {
-}
+type UserCreateParams = {}
 type UserItemParams = {
   id: number
 }

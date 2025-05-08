@@ -1,4 +1,4 @@
-import { Router } from "express"
+import { Router } from 'express'
 import countriesRoutes from '../modules/countries/countries.route'
 import calendars from '../modules/calendar/calendar.route'
 import users from '../modules/users/users.route'

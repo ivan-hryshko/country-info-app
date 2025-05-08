@@ -1,4 +1,4 @@
-import { usersRepository } from "./users.repository"
+import { usersRepository } from './users.repository'
 
 export class UsersService {
   static async create(): Promise<{}> {

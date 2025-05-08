@@ -1,16 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
-import { UserEntity } from '../users/users.entity';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from 'typeorm'
+import { UserEntity } from '../users/users.entity'
 
-@Entity({ name: "calendars" })
+@Entity({ name: 'calendars' })
 export class CalendarEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column({ type: 'jsonb', default: () => "'[]'" })
-  holidays: any[];
+  holidays: any[]
 
-
-  @OneToOne(() => UserEntity, user => user.calendar, { onDelete: 'CASCADE' })
+  @OneToOne(() => UserEntity, (user) => user.calendar, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'user_id' })
-  user: UserEntity;
+  user: UserEntity
 }

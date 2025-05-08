@@ -1,5 +1,5 @@
-import { Router } from "express"
-import { CountriesController } from "./conutries.controller"
+import { Router } from 'express'
+import { CountriesController } from './conutries.controller'
 
 const routes = Router()
 
