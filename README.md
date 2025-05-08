@@ -28,12 +28,12 @@ docker compose up
 
 ## Scripts
 
-| Script         | Description                            |
-|----------------|----------------------------------------|
-| `npm run build` | Compile TypeScript to `dist/`          |
-| `npm start`     | Run the compiled app (`dist/index.js`) |
+| Script          | Description                             |
+| --------------- | --------------------------------------- |
+| `npm run build` | Compile TypeScript to `dist/`           |
+| `npm start`     | Run the compiled app (`dist/index.js`)  |
 | `npm run serve` | Dev mode: watches and reloads on change |
-| `npm test`      | Run tests with Jest                    |
+| `npm test`      | Run tests with Jest                     |
 
 ## API
 
@@ -42,6 +42,7 @@ docker compose up
 Returns a list of countries from the Nager.Date API.
 
 **Example Response:**
+
 ```json
 [
   {
@@ -54,6 +55,7 @@ Returns a list of countries from the Nager.Date API.
   }
 ]
 ```
+
 ### `GET api/v1/countries/item/:countryCode`
 
 Returns information about the country.
@@ -73,4 +75,3 @@ Run all tests:
 ```bash
 npm run test
 ```
-
