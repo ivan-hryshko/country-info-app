@@ -6,8 +6,9 @@ export class CalendarEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("text", { array: true })
-  holidays: string[];
+  @Column({ type: 'jsonb', default: () => "'[]'" })
+  holidays: any[];
+
 
   @OneToOne(() => UserEntity, user => user.calendar, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'user_id' })

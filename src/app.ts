@@ -5,6 +5,7 @@ import postgresSource from './config/app-data-source'
 
 
 const app = express()
+app.use(express.json())
 
 postgresSource
   .initialize()
