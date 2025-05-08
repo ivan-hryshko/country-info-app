@@ -1,9 +1,10 @@
 import dotenv from 'dotenv'
-if (process.env.APP_ENV === 'test') {
-  dotenv.config({ path: './test.env' })
-} else {
-  dotenv.config({ path: './dev.env' })
-}
+// if (process.env.APP_ENV === 'test') {
+//   dotenv.config({ path: './test.env' })
+// } else {
+//   dotenv.config({ path: './dev.env' })
+// }
+dotenv.config({ path: './.env' })
 
 const APP_ENV = process.env.APP_ENV
 // if (!APP_ENV) {
