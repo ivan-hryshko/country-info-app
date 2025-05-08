@@ -12,6 +12,13 @@ export class CountriesServiceItem {
     return resCountryInfo.data;
   }
 
+  static async getFlag(code: string): Promise<string> {
+    const resFlag = await axios.get(`https://countriesnow.space/api/v0.1/countries/flag/images`);
+    const flagData = resFlag.data.data.find((flag: any) => flag.iso2 === code);
+    const flag = flagData ? flagData.flag : '';
+    return flag
+  }
+
   static validateItem(payload: any): { code : string } {
     if (!payload?.code) {
       throw new Error('Code is required');
@@ -26,10 +33,12 @@ export class CountriesServiceItem {
     const countryInfo = await this.getCountryInfo(code);
     const officialName = countryInfo.officialName;
     const population = await this.getPopulation(officialName);
+    const flag = await this.getFlag(code);
 
     const countryInfoPrepred = {
       borders: countryInfo.borders,
       population,
+      flag,
     }
     return countryInfoPrepred
   }

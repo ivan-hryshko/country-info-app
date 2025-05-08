@@ -12,5 +12,6 @@ describe('POST /api/v1/countries', () => {
     expect(response.status).toBe(200)
     expect(Array.isArray(response.body.data.borders)).toBe(true)
     expect(Array.isArray(response.body.data.population)).toBe(true)
+    expect( typeof response.body.data.flag).toBe('string')
   })
 })
