@@ -1,11 +1,13 @@
 import { DataSource } from "typeorm"
 import ENVS from "./envs";
 import { UserEntity } from "../modules/users/users.entity";
+import { CalendarEntity } from "../modules/calendar/calendars.entity";
 
 console.log('ENVS :>> ', ENVS);
 
 const entities = [
   UserEntity,
+  CalendarEntity,
 ]
 
 const appDataSource = new DataSource({
