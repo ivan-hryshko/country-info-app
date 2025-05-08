@@ -1,6 +1,6 @@
 import app from './app';
-const port = 3000;
+import ENVS from './config/envs';
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(ENVS.APP_PORT, () => {
+  console.log(`App listening at http://localhost:${ENVS.APP_PORT}`);
 });
