@@ -3,7 +3,7 @@ import request from 'supertest'
 import app from '../../../app'
 
 describe('POST /api/v1/countries', () => {
-  it('should list countries', async () => {
+  it('should allow list countries', async () => {
     expect(true).toBe(true)
 
     const response = await request(app)
